@@ -15,6 +15,6 @@ var bool = NaN === NaN // false;
 var bool2 = isNaN(NaN);//true
 var bool3 = isNaN('asdf');//true
 var x;
-x = 0/0;
+x = 0/0; //produce NaN
 var bool4 = x !== x; //this expression will be true if, and only if x is NaN.
 
