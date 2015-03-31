@@ -72,7 +72,7 @@ parseFloat('$123.1'); //NaN floats can't start with '$'
 parseInt(11,2); //3
 
 /**
- * some JS versions interpret number as octal if they writing with leading zero
+ * some JS versions interpret number as octal if they writing with leading zero and can interpret as octal
  */
 var test = parseInt(055); //45
 var test2 = parseInt(099); //99
