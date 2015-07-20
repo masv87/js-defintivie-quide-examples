@@ -1,7 +1,7 @@
 /** Integer examples **/
 var a = 1; //simply base-10 integer;
-var b = 0Xaa; //base-16 integer = 10 + 10 * 1
-var c = 0xaa; //base-16 integer = 10 + 10 * 1
+var b = 0Xaa; //base-16 integer = 10 + 10 * 16
+var c = 0xaa; //base-16 integer = 10 + 10 * 16
 
 /**Float examples **/
 /**
