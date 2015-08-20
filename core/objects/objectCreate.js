@@ -7,3 +7,4 @@ var test = Object.create({test: 'test'});
 var nilObj = Object.create(null); //nilObj inherits no methods and props
 //If you want create an ordinary empty  object:
 var emptyObj = Object.create(Object.prototype);
+var testObj = Object.create(Object.prototype, {x: {writable: true, enumerable: false, configurable: true}});
