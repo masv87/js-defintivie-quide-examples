@@ -31,4 +31,58 @@ Object.defineProperties(test2, {
   x: {writable: false},
   y:{enumerable: false}
 });
+/**
+ * Calls to Object.defineProperty or Object.defineProperties that attempt to violate them throw TypeError
+ */
+
+//If object not extensible, you can edit existing properties, but you can't add new properties to it.
+var notExtensible = {test:1};
+Object.preventExtensions(notExtensible);
+notExtensible.test2 = 12;//Allowed, but do nothing
+Object.defineProperty(notExtensible, 'test2', {value:123});//throw Error
+
+//If property is not configurable, you can not change its configurable and enumerable attributes
+var notConfigurable = Object.create(Object.prototype, {x: {configurable: false, value:123}});
+Object.defineProperty(notConfigurable,'x', {enumerable: false, configurable: true}); //Throw TypeError
+
+//If an accessor  property is not configurable, you can't change its getter or setter method, and you can't change it to data property
+var notConfigurableAccessor = Object.create(Object.prototype, {
+  x: {
+    get: function() {return 123},
+    set: function(value) {console.log(123)},
+    configurable: false
+  }
+ });
+Object.defineProperty(notConfigurableAccessor, 'x', {set :function(value) {alert('ok')}}); // throw TypeError
+
+//If a data property is not confgurable, you can't change it to an accessor property
+var notConfigurableData = Object.create(Object.prototype, {
+  x: {
+    value: 1234,
+    configurable: false
+  }
+});
+Object.defineProperty(notConfigurableData, 'x', {set :function(value) {alert('ok')}}); // throw TypeError
+
+
+//if a data property is not configurable, you can't change it writable attribute from false to true, but you can change it from true to false
+var notConfigurableData2 = Object.create(Object.prototype, {
+  x: {
+    value: 1234,
+    writable: false,
+    configurable: false
+  }
+});
+Object.defineProperty(notConfigurableData2, 'x', {writable: true}); // throw TypeError
+
+//If a data property is not configurable and not writable you can't change its value. You can change the value of a property that is configurable but not writable
+var notConfigurableData3 = Object.create(Object.prototype, {
+  x: {
+    value: 1234,
+    writable: false,
+    configurable: false
+  }
+});
+Object.defineProperty(notConfigurableData3, 'x', {value: 3}); // throw TypeError
+
 

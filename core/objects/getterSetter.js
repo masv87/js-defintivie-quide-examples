@@ -5,6 +5,7 @@
  **/
 var test = {
   foo: 1,
-  bar: {get bar(){return this.foo}, set bar(value){this.foo = value}}
+  get bar(){return this.foo},
+  set bar(value){this.foo = value}
 };
 
