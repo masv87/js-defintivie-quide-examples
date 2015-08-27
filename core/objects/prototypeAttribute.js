@@ -34,16 +34,16 @@ var testConstructor2 = func2.prototype.constructor === func; //false
   var parentObject1 = {x:1};
 
   TestFunction1.prototype = parentObject1;
-  var sun1 = new TestFunction1();
-var result1 = sun1.constructor.prototype === Object.getPrototypeOf(sun1); // false, because sun1.constructor === parentObject1.constructor
+  var child1 = new TestFunction1();
+var result1 = child1.constructor.prototype === Object.getPrototypeOf(child1); // false, because child1.constructor === parentObject1.constructor
 
 
 var TestFunction  = function() {};
 var parentObject = {x:1, constructor: TestFunction};
 
 TestFunction.prototype = parentObject;
-var sun = new TestFunction();
-var result = sun.constructor.prototype === Object.getPrototypeOf(sun); // true
+var child = new TestFunction();
+var result = child.constructor.prototype === Object.getPrototypeOf(child); // true
 
 var testObj = Object.create(parentObject1);
 var result2 = testObj.constructor.prototype === parentObject1; //false

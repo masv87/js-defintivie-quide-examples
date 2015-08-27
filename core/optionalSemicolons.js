@@ -7,7 +7,7 @@ b = 2;
 a = 1; b = 2; // first semicolon required
 
 /**
- * js treat line break as semicolon if they it can't parse the code without semicolon
+ * js treats line break as semicolon if they it can't parse the code without semicolon
  */
 var a
 a
