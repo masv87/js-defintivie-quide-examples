@@ -20,7 +20,7 @@ d.slice(-3,-2); //return [3]
 
 var e = [1,2,3,4,5];
 e.splice(0,2); //return [1,2], e is [3,4,5];
-e.splice(-1,0, 1,2,[6,7], 8);// return [], e is [3,4,1,2,[6,7],5]
+e.splice(-1,0, 1,2,[6,7], 8);// return [], e is [3,4,1,2,[6,7],8, 5]
 
 //ES5 array methods
 
