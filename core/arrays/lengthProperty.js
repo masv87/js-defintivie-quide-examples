@@ -16,4 +16,4 @@ Object.defineProperty(b, '2', {configurable: false});
 b.length = 1;//b is [1,2,3];
 
 var c = [1,2,3,4];
-delete c[2];//c length is 3
+delete c[2];//c length is 4
