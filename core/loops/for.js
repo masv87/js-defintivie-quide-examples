@@ -20,8 +20,8 @@ for (i = 0, j = 10; i < 10, j>0; i++, j--) {
  * @returns {*}
  */
 function tail(o) {
-  for (; o.next; o = o.next) ;
-    return o;
+  for (; o.next; o = o.next) {};
+  return o;
 }
 
 for(;;);//another way of writing infinity loop, like while(true)

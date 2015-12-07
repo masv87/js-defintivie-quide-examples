@@ -27,7 +27,7 @@ var func = function() {};
 var testConstructor = func.prototype.constructor === func; //true;
 var func2 = function() {};
 func2.prototype = {x:1};
-var testConstructor2 = func2.prototype.constructor === func; //false
+var testConstructor2 = func2.prototype.constructor === func2; //false
 
 
   var TestFunction1  = function() {};

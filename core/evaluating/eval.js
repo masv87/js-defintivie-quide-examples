@@ -24,6 +24,6 @@ function globalEval() {
  * evaluated code can query and set local variables but it can not define new variables   of functions in local scope
  */
 var f = function() {
-  var x = 12; eval("'use strict'; var y = x + 1" );
+  var x = 12; eval("'use    strict'; var y = x + 1" );
   return y;//Uncaught ReferenceError: y is not defined
 };
