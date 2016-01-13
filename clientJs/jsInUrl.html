@@ -1,0 +1,14 @@
+<!--
+Another way that JS code can be included in client side is is a Url following the the javascript: protocol specifier
+You can use a javascript: Url anywhere you'd  use a regular URL: the href attribute of an <a> tag or the action
+  attribute of a form , for example.-->
+<a href="javascript:new Date().toLocaleString()">What time is it</a>
+<!--
+Some browsers (such as FF) execute the code in the URL and use the returned string as the content of a new document to
+display. Just as when following a link to an http: URL, the browsers erases the current document and displays the new one.
+Other browsers (such as Google Chrome) do not allow URLs like the one above to override the containign document - they
+just ignore the return value of the code. They do, however, still support urls like this:
+-->
+<a href="javascript:alert(new Date().toLocaleTimeString());">
+  Check the time without overwriting the document
+</a>
